@@ -5,6 +5,11 @@ from generator import generate
 
 def regenerate_pswd():
     label_pswd['text'] = generate()
+    copy_button["command"] = root.clipboard_clear()
+    copy_button['command'] = root.clipboard_append(label_pswd['text'])
+
+    return label_pswd["text"]
+
 
 root = Tk()
 root.title("Password Generator")
@@ -20,8 +25,13 @@ label_pswd.grid(column=0, row=0)
 
 button_style = ttk.Style()
 button_style.configure("W.TButton", font=("arial", 20))
-ttk.Button(frm, text="Copy", command=root.clipboard_append(label_pswd['text']), style="W.TButton").grid(column=0, row=1)
-ttk.Button(frm, text="Regenerate", command=regenerate_pswd, style="W.TButton").grid(column=0, row=2)
-ttk.Button(frm, text="Quit", command=root.destroy, style="W.TButton").grid(column=0, row=3)
+copy_button = ttk.Button(frm, text="Copy", command=root.clipboard_append(
+    label_pswd['text']), style="W.TButton")
+copy_button.grid(column=0, row=1)
+ttk.Button(frm, text="Regenerate", command=regenerate_pswd,
+           style="W.TButton").grid(column=0, row=2)
+ttk.Button(frm, text="Quit", command=root.destroy,
+           style="W.TButton").grid(column=0, row=3)
+
 
 root.mainloop()

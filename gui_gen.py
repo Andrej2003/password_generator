@@ -19,13 +19,13 @@ root.title("Password Generator")
 root.iconbitmap("8726250_padlock_icon.ico")
 
 frm_style = ttk.Style()
-# frm_style.configure("TFrame", background="#d8b3fc")
+frm_style.configure("TFrame", background="#d8b3fc")
 frm = ttk.Frame(root, padding=10, border=250, style="TFrame")
 frm.grid()
 
 label_style = ttk.Style()
 label_style.configure("W.TLabel", font=("arial", 20))
-label_pswd = ttk.Label(frm, text=f"{generate()}", style="W.TLabel")
+label_pswd = ttk.Label(frm, text=f"{generate()}", style="W.TLabel", background="#d8b3fc")
 label_pswd.grid(column=0, row=0)
 
 button_style = ttk.Style()

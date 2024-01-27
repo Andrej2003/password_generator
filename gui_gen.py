@@ -25,7 +25,7 @@ style.configure("W.TLabel", font=("arial", 20))
 style.configure("W.TButton", font=("arial", 20),
                 foreground="black", background="white", relief="flat", borderwidth=0, width=10)
 
-frm = ttk.Frame(root, padding=10, border=250, style="TFrame")
+frm = ttk.Frame(root, padding=10, border=200, style="TFrame")
 frm.grid()
 
 label_pswd = ttk.Label(

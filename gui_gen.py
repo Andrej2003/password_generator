@@ -17,19 +17,21 @@ def copy_pswd():
 root = Tk()
 root.title("Password Generator")
 root.iconbitmap("8726250_padlock_icon.ico")
+root.resizable(0, 0)
 
 style = ttk.Style()
 style.theme_use("default")
 style.configure("TFrame", background="#d8b3fc")
-style.configure("W.TLabel", font=("arial", 20))
+style.configure("W.TLabel", font=("arial", 20), width=20)
 style.configure("W.TButton", font=("arial", 20),
                 foreground="black", background="white", relief="flat", borderwidth=0, width=10)
 
-frm = ttk.Frame(root, padding=10, border=200, style="TFrame")
+frm = ttk.Frame(root, padding=10, border=200,
+                style="TFrame", height=200, width=200)
 frm.grid()
 
 label_pswd = ttk.Label(
-    frm, text=f"{generate()}", style="W.TLabel", background="#d8b3fc")
+    frm, text=f"{generate()}", style="W.TLabel", background="#d8b3fc", anchor="center")
 label_pswd.grid(column=0, row=0, pady=7)
 
 copy_button = ttk.Button(
